@@ -1,5 +1,9 @@
 <h1>Welcome to my Slack-clone</h1>
-<p>Click on the link below to start texting</p>
+<% if user_signed_in? %>
+  <p>Click on the link below to start texting</p>
+<% else %>
+  <p>First register to start chatting</p>
+<% end %>
 <div class="card">
   <%= link_to 'GO TO CHATROOM', chatroom_path(id: 1) %>
 </div>
