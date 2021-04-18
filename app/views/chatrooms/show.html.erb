@@ -1,7 +1,9 @@
-<h1><%= @chatroom.name %></h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-  <%= render "messages/message", message: message %>
-  <% end %>
+<div class="container">
+  <h1><%= @chatroom.name %></h1>
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+    <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+  <%= render 'message', chatroom: @chatroom, message: @message %>
 </div>
-<%= render 'message', chatroom: @chatroom, message: @message %>
